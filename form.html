@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Form - Helping Hands</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar navbar-light  ">
+        
+        <div class="container-fluid">
+            
+          <img src="logo.png" alt="" style="max-width: 100px;">
+          </button>
+            <div class="lists">
+                <a class="list"   href="home.html"  >Home</a>
+                <a class="list"   href="about.html"  >About us</a>
+                <a class="list"   href="team.html"  >our team</a>
+                <a class="list"   href="gallery.html" >Gallery</a>
+                <!-- <button class="btn "><a   href="login.jsp"  >Donate now</a></button> -->
+                      
+               </div> 
+               
+              </div>
+
+          </div>
+
+    <!-- Donation Form Section -->
+    <section id="donation-form" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Donation Form</h2>
+                    <p class="lead">Thank you for choosing to donate. Please select the type of donation and fill out the form.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <form>
+                        <!-- Donation Type -->
+                        <div class="mb-3">
+                            <label for="donationType" class="form-label">Donation Type</label>
+                            <select class="form-select" id="donationType" required>
+                                <option value="">Choose Donation Type</option>
+                                <option value="food">Food Donation</option>
+                                <option value="clothes">Clothes Donation</option>
+                                <option value="books">Books Donation</option>
+                                <option value="money">Money Donation</option>
+                            </select>
+                        </div>
+
+                        <!-- Food Donation -->
+                        <div class="mb-3" id="foodDetails" style="display: none;">
+                            <label for="foodQuantity" class="form-label">Food Quantity (kg)</label>
+                            <input type="number" class="form-control" id="foodQuantity" placeholder="Enter quantity in kg approximately" required>
+                        </div>
+
+                        <!-- Clothes Donation -->
+                        <div class="mb-3" id="clothesDetails" style="display: none;">
+                            <label for="clothesType" class="form-label">Clothes Type</label>
+                            <input type="text" class="form-control" id="clothesType" placeholder="e.g., Shirts, Pants" required>
+                        </div>
+
+                        <!-- Books Donation -->
+                        <div class="mb-3" id="booksDetails" style="display: none;">
+                            <label for="bookCount" class="form-label">Number of Books</label>
+                            <input type="number" class="form-control" id="bookCount" placeholder="Enter number of books" required>
+                        </div>
+
+                        <!-- Money Donation -->
+                        <div class="mb-3" id="moneyDetails" style="display: none;">
+                            <label for="moneyAmount" class="form-label">Amount to Donate (in USD)</label>
+                            <input type="number" class="form-control" id="moneyAmount" placeholder="Enter amount in USD" required>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="mb-3">
+                            <label for="donorName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="donorName" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="donorEmail" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="donorEmail" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="donorPhone" class="form-label">Your Phone Number</label>
+                            <input type="tel" class="form-control" id="donorPhone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donorPhone" class="form-label">Address</label>
+                            <input type="tel" class="form-control" id="donorPhone" placeholder="Enter address to collect your things" required>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <a href="tq.html"><button type="button" class="btn ">Submit Donation</button></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+   
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Show donation details based on donation type
+        document.getElementById('donationType').addEventListener('change', function () {
+            let donationType = this.value;
+            document.getElementById('foodDetails').style.display = (donationType === 'food') ? 'block' : 'none';
+            document.getElementById('clothesDetails').style.display = (donationType === 'clothes') ? 'block' : 'none';
+            document.getElementById('booksDetails').style.display = (donationType === 'books') ? 'block' : 'none';
+            document.getElementById('moneyDetails').style.display = (donationType === 'money') ? 'block' : 'none';
+        });
+    </script>
+    <style>
+       
+         .navbar{
+            background-color: white;
+            box-shadow: 1px 1px 3px black;
+        }
+        .list-group-item{
+border:1px solid black;
+font-size: large;
+}
+.container h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px  1px black;
+    color: brown;
+}
+.list-group-item:hover{
+background-color: yellowgreen;
+color: white;}
+.lists .list{
+    margin: -10px 10px 0px 50px;
+    text-decoration: none;
+    color: darkcyan;
+    font-size: large;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.lists .list:hover{
+    text-decoration: underline  rgb(187, 12, 105);
+    
+}
+        /* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+form{
+    width: 900px;
+    height: 650px;
+    padding: 50px;
+    box-shadow: 2px 2px 10px black;
+
+   
+}
+
+/* Donation Form Styling */
+#donation-form {
+    background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.form-select,
+.form-control {
+    font-size: 1rem;
+}
+
+button[type="button"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 1.1rem;
+    background-color: rgb(187, 12, 105);
+    color: white;
+    margin-left: 220px;
+}
+.btn:hover{
+    transform: scale(1.1);
+    background-color: rgb(187, 12, 105);
+    color: white;
+}
+.mb-3{
+    font-weight: 700;
+}
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #fff;
+}
+
+    </style>
+</body>
+
+</html>
